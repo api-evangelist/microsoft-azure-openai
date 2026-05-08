@@ -30,6 +30,8 @@ apis:
       - Large Language Models
       - OpenAI
     properties:
+      - url: openapi/microsoft-azure-openai-openapi.yml
+        type: OpenAPI
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
       - type: Authentication
