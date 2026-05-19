@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure OpenAI Service REST API — Embeddings
+  description: 'Azure OpenAI Service REST API — Embeddings. 1 operations. Lead operation: AOAI Create embeddings. Self-contained
+    Naftiko capability covering one Microsoft Azure Openai business surface.'
+  tags:
+  - Microsoft Azure Openai
+  - Embeddings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_OPENAI_API_KEY: MICROSOFT_AZURE_OPENAI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-openai-embeddings
+    baseUri: https://{resource}.openai.azure.com
+    description: Azure OpenAI Service REST API — Embeddings business capability. Self-contained, no shared references.
+    resources:
+    - name: openai-deployments-deployment-id-embeddings
+      path: /openai/deployments/{deployment-id}/embeddings
+      operations:
+      - name: createembedding
+        method: POST
+        description: AOAI Create embeddings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_OPENAI_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-azure-openai-embeddings-rest
+    port: 8080
+    description: REST adapter for Azure OpenAI Service REST API — Embeddings. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/openai/deployments/{deployment-id}/embeddings
+      name: openai-deployments-deployment-id-embeddings
+      description: REST surface for openai-deployments-deployment-id-embeddings.
+      operations:
+      - method: POST
+        name: createembedding
+        description: AOAI Create embeddings
+        call: microsoft-azure-openai-embeddings.createembedding
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-azure-openai-embeddings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure OpenAI Service REST API — Embeddings. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: aoai-create-embeddings
+      description: AOAI Create embeddings
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-azure-openai-embeddings.createembedding
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
