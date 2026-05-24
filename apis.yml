@@ -68,6 +68,8 @@ common:
     url: https://www.microsoft.com/en-us/legal/terms-of-use
   - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
+  - type: LLMsTxt
+    url: https://portal.azure.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
