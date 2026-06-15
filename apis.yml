@@ -1,6 +1,7 @@
 name: Azure OpenAI Service
-description: Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5
-  Turbo, DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
+description: >-
+  Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo,
+  DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -14,39 +15,32 @@ modified: '2026-05-19'
 specificationVersion: '0.18'
 apis:
   - name: Azure OpenAI Service API
-    description: Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5
-      Turbo, DALL-E, and Whisper with enterprise-grade security and compliance. It supports chat completions, text generation,
-      embeddings, image generation, audio transcription, and fine-tuning with Azure Active Directory authentication and private
-      networking.
+    description: >-
+      Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5
+      Turbo, DALL-E, and Whisper with enterprise-grade security and compliance. It supports chat completions, text
+      generation, embeddings, image generation, audio transcription, and fine-tuning with Azure Active Directory
+      authentication and private networking.
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
     baseURL: https://{resource}.openai.azure.com/
     tags:
-    - AI
-    - Embeddings
-    - GPT
-    - Generative AI
-    - Large Language Models
-    - OpenAI
+      - AI
+      - Embeddings
+      - GPT
+      - Generative AI
+      - Large Language Models
+      - OpenAI
     properties:
-    - url: openapi/microsoft-azure-openai-openapi.yml
-      type: OpenAPI
-    - type: Documentation
-      url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
-    - type: Authentication
-      url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
-    - type: Quickstart
-      url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
-    - type: APIReference
-      url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
-    - type: NaftikoCapability
-      url: capabilities/microsoft-azure-openai-chat.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-azure-openai-completions.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-azure-openai-embeddings.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-azure-openai-images.yaml
+      - url: openapi/microsoft-azure-openai-openapi.yml
+        type: OpenAPI
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+      - type: Authentication
+        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
+      - type: Quickstart
+        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
+      - type: APIReference
+        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
 common:
   - type: GitHubOrganization
     url: https://github.com/Azure

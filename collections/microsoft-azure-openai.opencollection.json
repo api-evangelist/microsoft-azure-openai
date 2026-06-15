@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure OpenAI Service REST API",
+    "version": "2024-10-21"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Completions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AOAI Create completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{resource}.openai.azure.com/openai/deployments/:deployment-id/completions",
+            "params": [
+              {
+                "name": "deployment-id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a text completion for the given prompt."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Chat",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AOAI Create chat completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{resource}.openai.azure.com/openai/deployments/:deployment-id/chat/completions",
+            "params": [
+              {
+                "name": "deployment-id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a chat completion for a list of messages."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Embeddings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AOAI Create embeddings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{resource}.openai.azure.com/openai/deployments/:deployment-id/embeddings",
+            "params": [
+              {
+                "name": "deployment-id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates embeddings for the input text."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Images",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AOAI Generate image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{resource}.openai.azure.com/openai/deployments/:deployment-id/images/generations",
+            "params": [
+              {
+                "name": "deployment-id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates images from a prompt."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
