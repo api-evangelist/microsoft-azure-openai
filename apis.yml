@@ -2,7 +2,7 @@ name: Azure OpenAI Service
 description: >-
   Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo,
   DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Embeddings
@@ -20,7 +20,7 @@ apis:
       Turbo, DALL-E, and Whisper with enterprise-grade security and compliance. It supports chat completions, text
       generation, embeddings, image generation, audio transcription, and fine-tuning with Azure Active Directory
       authentication and private networking.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
     baseURL: https://{resource}.openai.azure.com/
     tags:
