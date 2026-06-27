@@ -37,7 +37,7 @@ apis:
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
       - type: Authentication
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
-      - type: Quickstart
+      - type: GettingStarted
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
       - type: APIReference
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
@@ -52,7 +52,7 @@ common:
     url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
   - type: Website
     url: https://azure.microsoft.com/en-us/products/ai-services/openai-service
-  - type: SignUp
+  - type: Signup
     url: https://azure.microsoft.com/en-us/free/
   - type: Login
     url: https://portal.azure.com/
@@ -62,7 +62,7 @@ common:
     url: https://www.microsoft.com/en-us/legal/terms-of-use
   - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://portal.azure.com/llms.txt
 maintainers:
   - FN: Kin Lane
