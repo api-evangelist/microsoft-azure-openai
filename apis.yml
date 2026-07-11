@@ -42,6 +42,10 @@ apis:
       - type: APIReference
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
 common:
+  - type: DomainSecurity
+    url: security/microsoft-azure-openai-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-azure-openai-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-azure-openai-scopes.yml
   - type: GitHubOrganization

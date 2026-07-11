@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/microsoft-azure-openai-openapi.yml
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - implicit
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: api-key
+  sources:
+  - openapi/microsoft-azure-openai-openapi.yml
+- name: azure_auth
+  type: oauth2
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    scopes: 1
+  sources:
+  - openapi/microsoft-azure-openai-openapi.yml
