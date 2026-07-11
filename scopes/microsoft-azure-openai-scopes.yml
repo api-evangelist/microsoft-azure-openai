@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/microsoft-azure-openai-openapi.yml
+schemes:
+- name: azure_auth
+  source: openapi/microsoft-azure-openai-openapi.yml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+scopes:
+- scope: user_impersonation
+  description: Impersonate user
+  flows:
+  - implicit
+  sources:
+  - openapi/microsoft-azure-openai-openapi.yml
