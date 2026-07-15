@@ -42,6 +42,8 @@ apis:
       - type: APIReference
         url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-azure-openai-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-azure-openai-domain-security.yml
   - type: Authentication
