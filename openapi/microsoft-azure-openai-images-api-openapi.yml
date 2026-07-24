@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: Azure OpenAI Service REST Chat Images API
+  description: Azure OpenAI Service REST API provides access to OpenAI models hosted in Azure including GPT, embeddings, and image generation. Operations require a deployment name configured per model.
+  version: '2024-10-21'
+servers:
+- url: https://{resource}.openai.azure.com
+  variables:
+    resource:
+      default: myresource
+security:
+- apiKey: []
+- azure_auth:
+  - user_impersonation
+tags:
+- name: Images
+paths:
+  /openai/deployments/{deployment-id}/images/generations:
+    parameters:
+    - name: deployment-id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: createImage
+      summary: AOAI Generate image
+      description: Generates images from a prompt.
+      tags:
+      - Images
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+                n:
+                  type: integer
+                size:
+                  type: string
+      responses:
+        '200':
+          description: Image generation
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Impersonate user
+externalDocs:
+  description: Azure OpenAI REST API Documentation
+  url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+x-generated-from: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+x-generated-by: claude-crawl-2026-05-08
