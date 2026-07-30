@@ -2,7 +2,20 @@ name: Azure OpenAI Service
 description: >-
   Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo,
   DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-azure-openai.png
 tags:
   - AI
   - Embeddings
@@ -14,33 +27,78 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.18'
 apis:
-  - name: Azure OpenAI Service API
-    description: >-
-      Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5
-      Turbo, DALL-E, and Whisper with enterprise-grade security and compliance. It supports chat completions, text
-      generation, embeddings, image generation, audio transcription, and fine-tuning with Azure Active Directory
-      authentication and private networking.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
-    baseURL: https://{resource}.openai.azure.com/
-    tags:
-      - AI
-      - Embeddings
-      - GPT
-      - Generative AI
-      - Large Language Models
-      - OpenAI
-    properties:
-      - url: openapi/microsoft-azure-openai-openapi.yml
-        type: OpenAPI
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
-      - type: APIReference
-        url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+- aid: microsoft-azure-openai:microsoft-azure-openai-chat-api
+  name: Azure OpenAI Service Chat API
+  description: The Chat API from Azure OpenAI Service — 1 operation(s) for chat.
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  baseURL: https://{resource}.openai.azure.com/
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-openai-chat-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+- aid: microsoft-azure-openai:microsoft-azure-openai-completions-api
+  name: Azure OpenAI Service Completions API
+  description: The Completions API from Azure OpenAI Service — 1 operation(s) for completions.
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  baseURL: https://{resource}.openai.azure.com/
+  tags:
+  - Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-openai-completions-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+- aid: microsoft-azure-openai:microsoft-azure-openai-embeddings-api
+  name: Azure OpenAI Service Embeddings API
+  description: The Embeddings API from Azure OpenAI Service — 1 operation(s) for embeddings.
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  baseURL: https://{resource}.openai.azure.com/
+  tags:
+  - Embeddings
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-openai-embeddings-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+- aid: microsoft-azure-openai:microsoft-azure-openai-images-api
+  name: Azure OpenAI Service Images API
+  description: The Images API from Azure OpenAI Service — 1 operation(s) for images.
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  baseURL: https://{resource}.openai.azure.com/
+  tags:
+  - Images
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-openai-images-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-openai-agentic-access.yml
