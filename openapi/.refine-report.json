@@ -1,0 +1,20 @@
+{
+  "provider": "microsoft-azure-openai",
+  "sources": [
+    "microsoft-azure-openai-chat-api-openapi.yml",
+    "microsoft-azure-openai-completions-api-openapi.yml",
+    "microsoft-azure-openai-embeddings-api-openapi.yml",
+    "microsoft-azure-openai-images-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-azure-openai-chat-api-openapi.yml",
+    "microsoft-azure-openai-completions-api-openapi.yml",
+    "microsoft-azure-openai-embeddings-api-openapi.yml",
+    "microsoft-azure-openai-images-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
