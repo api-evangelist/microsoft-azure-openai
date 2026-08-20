@@ -17,6 +17,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-azure-openai.png
 tags:
+  - Artificial Intelligence
+  - Embeddings
+  - GPT
+  - Generative AI
+  - Large Language Models
+  - OpenAI
+tags_raw:
   - AI
   - Embeddings
   - GPT
@@ -87,6 +94,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
   baseURL: https://{resource}.openai.azure.com/
   tags:
+  - Image
+  tags_raw:
   - Images
   properties:
   - type: OpenAPI
