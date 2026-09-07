@@ -1,7 +1,5 @@
 name: Azure OpenAI Service
-description: >-
-  Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo,
-  DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
+description: Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo, DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
 deliveryModel:
   model: saas
   open_source: false
@@ -29,19 +27,19 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-azure-openai.png
 tags:
-  - Artificial Intelligence
-  - Embeddings
-  - GPT
-  - Generative AI
-  - Large Language Models
-  - OpenAI
+- Artificial Intelligence
+- Embeddings
+- GPT
+- Generative AI
+- Large Language Models
+- OpenAI
 tags_raw:
-  - AI
-  - Embeddings
-  - GPT
-  - Generative AI
-  - Large Language Models
-  - OpenAI
+- AI
+- Embeddings
+- GPT
+- Generative AI
+- Large Language Models
+- OpenAI
 created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.23'
@@ -120,37 +118,119 @@ apis:
     url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
   - type: APIReference
     url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
-common:
-  - type: AgenticAccess
-    url: agentic-access/microsoft-azure-openai-agentic-access.yml
-  - type: DomainSecurity
-    url: security/microsoft-azure-openai-domain-security.yml
-  - type: Authentication
-    url: authentication/microsoft-azure-openai-authentication.yml
-  - type: OAuthScopes
-    url: scopes/microsoft-azure-openai-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/Azure
-  - type: Portal
-    url: https://portal.azure.com/
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/
+- aid: microsoft-azure-openai:inference-api
+  name: Azure OpenAI Inference REST API
+  description: Data-plane REST API for running inference against deployed Azure OpenAI models, including chat completions, completions, embeddings, image generation, and audio transcription/translation. Authenticate with API key (api-key header) or Microsoft Entra ID bearer token.
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+  baseURL: https://{your-resource-name}.openai.azure.com/openai
+  tags:
+  - Inference
+  - Chat Completions
+  - Embeddings
+  - Image-Generation
+  - Audio
+  tags_raw:
+  - Inference
+  - Chat Completions
+  - Embeddings
+  - Image Generation
+  - Audio
+  properties:
   - type: Documentation
-    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
-  - type: Website
-    url: https://azure.microsoft.com/en-us/products/ai-services/openai-service
-  - type: Signup
-    url: https://azure.microsoft.com/en-us/free/
-  - type: Login
-    url: https://portal.azure.com/
-  - type: Support
-    url: https://support.microsoft.com/
-  - type: TermsOfService
-    url: https://www.microsoft.com/en-us/legal/terms-of-use
-  - type: PrivacyPolicy
-    url: https://privacy.microsoft.com/en-us/privacystatement
-  - type: LlmsText
-    url: https://portal.azure.com/llms.txt
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+  - type: API Reference (Latest)
+    url: https://learn.microsoft.com/en-us/azure/foundry/openai/latest
+  - type: API Reference (Preview)
+    url: https://learn.microsoft.com/en-us/azure/foundry/openai/reference-preview-latest
+  - type: OpenAPI Source
+    url: https://github.com/Azure/azure-rest-api-specs/tree/main/specification/cognitiveservices/data-plane/AzureOpenAI
+  - type: AsyncAPI
+    url: https://raw.githubusercontent.com/api-evangelist/azure-openai/refs/heads/main/asyncapi/azure-openai-asyncapi.yml
+  - url: graphql/azure-openai-graphql.md
+    type: GraphQL
+- aid: microsoft-azure-openai:responses-api
+  name: Azure OpenAI Responses API
+  description: Stateful, agent-friendly API for building multi-turn AI experiences with tool use, file inputs, and conversation state managed on the service side.
+  humanURL: https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/responses
+  baseURL: https://{your-resource-name}.openai.azure.com/openai/responses
+  tags:
+  - Responses
+  - Agents
+  - Tool Use
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/responses
+- aid: microsoft-azure-openai:control-plane
+  name: Azure OpenAI Control Plane API
+  description: Azure Resource Manager (ARM) REST API for creating and managing Azure OpenAI accounts, model deployments, network rules, and other resource configuration.
+  humanURL: https://learn.microsoft.com/en-us/rest/api/cognitiveservices/
+  baseURL: https://management.azure.com
+  tags:
+  - ARM
+  - Control Plane
+  - Deployment
+  - Resource Management
+  tags_raw:
+  - ARM
+  - Control Plane
+  - Deployments
+  - Resource Management
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/cognitiveservices/
+- aid: microsoft-azure-openai:azure-openai-audio-api
+  name: Azure OpenAI Service Audio API
+  description: Audio transcription and translation (Whisper)
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+  baseURL: https://{your-resource-name}.openai.azure.com/openai
+  tags:
+  - Audio
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-openai-audio-api-openapi.yml
+- aid: microsoft-azure-openai:azure-openai-chat-completions-api
+  name: Azure OpenAI Service Chat Completions API
+  description: Chat-formatted text generation
+  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+  baseURL: https://{your-resource-name}.openai.azure.com/openai
+  tags:
+  - Chat Completions
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-openai-chat-completions-api-openapi.yml
+common:
+- type: AgenticAccess
+  url: agentic-access/microsoft-azure-openai-agentic-access.yml
+- type: DomainSecurity
+  url: security/microsoft-azure-openai-domain-security.yml
+- type: Authentication
+  url: authentication/microsoft-azure-openai-authentication.yml
+- type: OAuthScopes
+  url: scopes/microsoft-azure-openai-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/Azure
+- type: Portal
+  url: https://portal.azure.com/
+- type: Pricing
+  url: https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/
+- type: Documentation
+  url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+- type: Website
+  url: https://azure.microsoft.com/en-us/products/ai-services/openai-service
+- type: Signup
+  url: https://azure.microsoft.com/en-us/free/
+- type: Login
+  url: https://portal.azure.com/
+- type: Support
+  url: https://support.microsoft.com/
+- type: TermsOfService
+  url: https://www.microsoft.com/en-us/legal/terms-of-use
+- type: PrivacyPolicy
+  url: https://privacy.microsoft.com/en-us/privacystatement
+- type: LlmsText
+  url: https://portal.azure.com/llms.txt
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-parent: microsoft-azure
+x-relationship: product

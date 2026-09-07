@@ -1,0 +1,157 @@
+openapi: 3.2.0
+info:
+  title: Azure OpenAI Inference REST Audio API
+  version: '2024-10-21'
+  description: 'Data-plane REST API for running inference against models deployed to an
+
+    Azure OpenAI resource. Endpoints follow the pattern
+
+    `https://{resource-name}.openai.azure.com/openai/deployments/{deployment-id}/{endpoint}?api-version={api-version}`.
+
+
+    Authenticate with an `api-key` header or with a Microsoft Entra ID bearer token
+
+    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).
+
+    '
+  contact:
+    name: Azure OpenAI Service
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+servers:
+- url: https://{resource-name}.openai.azure.com/openai
+  description: Azure OpenAI resource endpoint
+  variables:
+    resource-name:
+      default: my-resource
+      description: Your Azure OpenAI resource name
+tags:
+- name: Audio
+  description: Audio transcription and translation (Whisper)
+paths:
+  /deployments/{deployment-id}/audio/transcriptions:
+    post:
+      summary: Transcribe audio
+      operationId: createTranscription
+      tags:
+      - Audio
+      parameters:
+      - in: path
+        name: deployment-id
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: api-version
+        required: true
+        schema:
+          type: string
+          default: '2024-10-21'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                language:
+                  type: string
+                prompt:
+                  type: string
+                response_format:
+                  type: string
+                  enum:
+                  - json
+                  - text
+                  - srt
+                  - verbose_json
+                  - vtt
+                temperature:
+                  type: number
+      responses:
+        '200':
+          description: Transcription
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  text:
+                    type: string
+      security:
+      - apiKey: []
+      - entra: []
+  /deployments/{deployment-id}/audio/translations:
+    post:
+      summary: Translate audio to English
+      operationId: createTranslation
+      tags:
+      - Audio
+      parameters:
+      - in: path
+        name: deployment-id
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: api-version
+        required: true
+        schema:
+          type: string
+          default: '2024-10-21'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                prompt:
+                  type: string
+                response_format:
+                  type: string
+                  enum:
+                  - json
+                  - text
+                  - srt
+                  - verbose_json
+                  - vtt
+                temperature:
+                  type: number
+      responses:
+        '200':
+          description: Translation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  text:
+                    type: string
+      security:
+      - apiKey: []
+      - entra: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key
+      description: Azure OpenAI resource API key
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://cognitiveservices.azure.com/.default: Azure Cognitive Services data plane
