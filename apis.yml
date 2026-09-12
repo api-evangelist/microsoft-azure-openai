@@ -1,4 +1,5 @@
 name: Azure OpenAI Service
+url: https://azure.microsoft.com/en-us/products/ai-services/openai-service
 description: Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo, DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
 deliveryModel:
   model: saas
