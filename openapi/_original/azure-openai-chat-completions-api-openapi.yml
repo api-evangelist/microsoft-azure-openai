@@ -1,0 +1,181 @@
+# x-archived-from: azure-openai-chat-completions-api-openapi.yml
+# x-archived-on: 2026-09-16
+openapi: 3.2.0
+info:
+  title: Azure OpenAI Inference REST Audio Chat Completions API
+  version: '2024-10-21'
+  description: 'Data-plane REST API for running inference against models deployed to an
+
+    Azure OpenAI resource. Endpoints follow the pattern
+
+    `https://{resource-name}.openai.azure.com/openai/deployments/{deployment-id}/{endpoint}?api-version={api-version}`.
+
+
+    Authenticate with an `api-key` header or with a Microsoft Entra ID bearer token
+
+    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).
+
+    '
+  contact:
+    name: Azure OpenAI Service
+    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
+servers:
+- url: https://{resource-name}.openai.azure.com/openai
+  description: Azure OpenAI resource endpoint
+  variables:
+    resource-name:
+      default: my-resource
+      description: Your Azure OpenAI resource name
+tags:
+- name: Chat Completions
+  description: Chat-formatted text generation
+paths:
+  /deployments/{deployment-id}/chat/completions:
+    post:
+      summary: Create a chat completion
+      operationId: createChatCompletion
+      tags:
+      - Chat Completions
+      parameters:
+      - in: path
+        name: deployment-id
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: api-version
+        required: true
+        schema:
+          type: string
+          default: '2024-10-21'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCompletionRequest'
+      responses:
+        '200':
+          description: Chat completion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatCompletionResponse'
+      security:
+      - apiKey: []
+      - entra: []
+components:
+  schemas:
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created:
+          type: integer
+        model:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              message:
+                $ref: '#/components/schemas/ChatMessage'
+              finish_reason:
+                type: string
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+    ChatCompletionRequest:
+      type: object
+      required:
+      - messages
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        temperature:
+          type: number
+        top_p:
+          type: number
+        n:
+          type: integer
+        stream:
+          type: boolean
+        stop:
+          type:
+          - string
+          - array
+        max_tokens:
+          type: integer
+        max_completion_tokens:
+          type: integer
+        presence_penalty:
+          type: number
+        frequency_penalty:
+          type: number
+        logit_bias:
+          type: object
+        user:
+          type: string
+        seed:
+          type: integer
+        response_format:
+          type: object
+        tools:
+          type: array
+          items:
+            type: object
+        tool_choice:
+          type:
+          - string
+          - object
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+          - developer
+          - function
+        content:
+          type:
+          - string
+          - array
+          - 'null'
+        name:
+          type: string
+        tool_call_id:
+          type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key
+      description: Azure OpenAI resource API key
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://cognitiveservices.azure.com/.default: Azure Cognitive Services data plane

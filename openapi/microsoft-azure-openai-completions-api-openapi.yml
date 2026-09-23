@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Azure OpenAI Service REST Chat Completions API
+  title: Azure OpenAI Service REST Completions API
   description: Azure OpenAI Service REST API provides access to OpenAI models hosted in Azure including GPT, embeddings, and image generation. Operations require a deployment name configured per model.
   version: '2024-10-21'
 servers:

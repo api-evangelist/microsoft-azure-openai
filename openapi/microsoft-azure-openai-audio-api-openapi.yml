@@ -11,9 +11,7 @@ info:
 
     Authenticate with an `api-key` header or with a Microsoft Entra ID bearer token
 
-    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).
-
-    '
+    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).'
   contact:
     name: Azure OpenAI Service
     url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference

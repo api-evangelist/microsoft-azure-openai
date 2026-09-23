@@ -1,12 +1,13 @@
 {
   "provider": "microsoft-azure-openai",
   "sources": [
-    "microsoft-azure-openai-chat-api-openapi.yml",
-    "microsoft-azure-openai-completions-api-openapi.yml",
-    "microsoft-azure-openai-embeddings-api-openapi.yml",
-    "microsoft-azure-openai-images-api-openapi.yml"
+    "_original/azure-openai-audio-api-openapi.yml",
+    "_original/azure-openai-chat-completions-api-openapi.yml",
+    "_ae-authored/microsoft-azure-openai-openapi.yml"
   ],
   "outputs": [
+    "microsoft-azure-openai-audio-api-openapi.yml",
+    "microsoft-azure-openai-chat-completions-api-openapi.yml",
     "microsoft-azure-openai-chat-api-openapi.yml",
     "microsoft-azure-openai-completions-api-openapi.yml",
     "microsoft-azure-openai-embeddings-api-openapi.yml",
@@ -16,11 +17,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-azure-openai-chat-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-azure-openai-completions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-azure-openai-embeddings-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-azure-openai-images-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-azure-openai-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-azure-openai-audio-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-azure-openai-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-azure-openai-chat-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-azure-openai-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-azure-openai-embeddings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-azure-openai-images-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

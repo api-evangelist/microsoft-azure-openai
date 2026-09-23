@@ -11,9 +11,7 @@ info:
 
     Authenticate with an `api-key` header or with a Microsoft Entra ID bearer token
 
-    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).
-
-    '
+    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).'
   contact:
     name: Azure OpenAI Service
     url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
@@ -64,37 +62,6 @@ paths:
       - entra: []
 components:
   schemas:
-    ChatCompletionResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        object:
-          type: string
-        created:
-          type: integer
-        model:
-          type: string
-        choices:
-          type: array
-          items:
-            type: object
-            properties:
-              index:
-                type: integer
-              message:
-                $ref: '#/components/schemas/ChatMessage'
-              finish_reason:
-                type: string
-        usage:
-          type: object
-          properties:
-            prompt_tokens:
-              type: integer
-            completion_tokens:
-              type: integer
-            total_tokens:
-              type: integer
     ChatCompletionRequest:
       type: object
       required:
@@ -140,6 +107,37 @@ components:
           type:
           - string
           - object
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created:
+          type: integer
+        model:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              message:
+                $ref: '#/components/schemas/ChatMessage'
+              finish_reason:
+                type: string
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
     ChatMessage:
       type: object
       required:
