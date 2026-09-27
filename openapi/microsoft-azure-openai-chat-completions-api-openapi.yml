@@ -107,6 +107,29 @@ components:
           type:
           - string
           - object
+    ChatMessage:
+      type: object
+      required:
+      - role
+      properties:
+        role:
+          type: string
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+          - developer
+          - function
+        content:
+          type:
+          - string
+          - array
+          - 'null'
+        name:
+          type: string
+        tool_call_id:
+          type: string
     ChatCompletionResponse:
       type: object
       properties:
@@ -138,29 +161,6 @@ components:
               type: integer
             total_tokens:
               type: integer
-    ChatMessage:
-      type: object
-      required:
-      - role
-      properties:
-        role:
-          type: string
-          enum:
-          - system
-          - user
-          - assistant
-          - tool
-          - developer
-          - function
-        content:
-          type:
-          - string
-          - array
-          - 'null'
-        name:
-          type: string
-        tool_call_id:
-          type: string
   securitySchemes:
     apiKey:
       type: apiKey

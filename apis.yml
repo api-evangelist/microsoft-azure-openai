@@ -131,7 +131,7 @@ apis:
   - Inference
   - Chat Completions
   - Embeddings
-  - Image-Generation
+  - Image Generation
   - Audio
   tags_raw:
   - Inference
@@ -139,6 +139,7 @@ apis:
   - Embeddings
   - Image Generation
   - Audio
+  - Image-Generation
   properties:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
