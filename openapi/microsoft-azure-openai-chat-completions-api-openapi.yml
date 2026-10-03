@@ -62,51 +62,6 @@ paths:
       - entra: []
 components:
   schemas:
-    ChatCompletionRequest:
-      type: object
-      required:
-      - messages
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChatMessage'
-        temperature:
-          type: number
-        top_p:
-          type: number
-        n:
-          type: integer
-        stream:
-          type: boolean
-        stop:
-          type:
-          - string
-          - array
-        max_tokens:
-          type: integer
-        max_completion_tokens:
-          type: integer
-        presence_penalty:
-          type: number
-        frequency_penalty:
-          type: number
-        logit_bias:
-          type: object
-        user:
-          type: string
-        seed:
-          type: integer
-        response_format:
-          type: object
-        tools:
-          type: array
-          items:
-            type: object
-        tool_choice:
-          type:
-          - string
-          - object
     ChatMessage:
       type: object
       required:
@@ -161,6 +116,51 @@ components:
               type: integer
             total_tokens:
               type: integer
+    ChatCompletionRequest:
+      type: object
+      required:
+      - messages
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        temperature:
+          type: number
+        top_p:
+          type: number
+        n:
+          type: integer
+        stream:
+          type: boolean
+        stop:
+          type:
+          - string
+          - array
+        max_tokens:
+          type: integer
+        max_completion_tokens:
+          type: integer
+        presence_penalty:
+          type: number
+        frequency_penalty:
+          type: number
+        logit_bias:
+          type: object
+        user:
+          type: string
+        seed:
+          type: integer
+        response_format:
+          type: object
+        tools:
+          type: array
+          items:
+            type: object
+        tool_choice:
+          type:
+          - string
+          - object
   securitySchemes:
     apiKey:
       type: apiKey
