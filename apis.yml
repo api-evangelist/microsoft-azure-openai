@@ -210,6 +210,9 @@ apis:
   - type: OpenAPI
     url: openapi/microsoft-azure-openai-chat-completions-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/microsoft-azure-openai-capability-edges.yml
+  name: Azure OpenAI Service Business Capability Map
 - type: AgenticAccess
   url: agentic-access/microsoft-azure-openai-agentic-access.yml
 - type: DomainSecurity
