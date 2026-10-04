@@ -45,24 +45,6 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: microsoft-azure-openai:microsoft-azure-openai-chat-api
-  name: Azure OpenAI Service Chat API
-  description: The Chat API from Azure OpenAI Service — 1 operation(s) for chat.
-  humanURL: https://learn.microsoft.com/en-us/azure/ai-services/openai/
-  baseURL: https://{resource}.openai.azure.com/
-  tags:
-  - Chat
-  properties:
-  - type: OpenAPI
-    url: openapi/microsoft-azure-openai-chat-api-openapi.yml
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
-  - type: Authentication
-    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity
-  - type: GettingStarted
-    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart
-  - type: APIReference
-    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
 - aid: microsoft-azure-openai:microsoft-azure-openai-completions-api
   name: Azure OpenAI Service Completions API
   description: The Completions API from Azure OpenAI Service — 1 operation(s) for completions.

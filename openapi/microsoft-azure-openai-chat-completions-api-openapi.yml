@@ -1,31 +1,58 @@
 openapi: 3.2.0
 info:
-  title: Azure OpenAI Inference REST Audio Chat Completions API
+  title: Azure OpenAI Service REST Chat API
+  description: Azure OpenAI Service REST API provides access to OpenAI models hosted in Azure including GPT, embeddings, and image generation. Operations require a deployment name configured per model.
   version: '2024-10-21'
-  description: 'Data-plane REST API for running inference against models deployed to an
-
-    Azure OpenAI resource. Endpoints follow the pattern
-
-    `https://{resource-name}.openai.azure.com/openai/deployments/{deployment-id}/{endpoint}?api-version={api-version}`.
-
-
-    Authenticate with an `api-key` header or with a Microsoft Entra ID bearer token
-
-    (`Authorization: Bearer ...`, scope `https://cognitiveservices.azure.com/.default`).'
-  contact:
-    name: Azure OpenAI Service
-    url: https://learn.microsoft.com/en-us/azure/ai-services/openai/reference
 servers:
-- url: https://{resource-name}.openai.azure.com/openai
-  description: Azure OpenAI resource endpoint
+- url: https://{resource}.openai.azure.com
   variables:
-    resource-name:
-      default: my-resource
-      description: Your Azure OpenAI resource name
+    resource:
+      default: myresource
+security:
+- apiKey: []
+- azure_auth:
+  - user_impersonation
 tags:
 - name: Chat Completions
-  description: Chat-formatted text generation
 paths:
+  /openai/deployments/{deployment-id}/chat/completions:
+    parameters:
+    - name: deployment-id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: createChatCompletion
+      summary: AOAI Create chat completion
+      description: Creates a chat completion for a list of messages.
+      tags:
+      - Chat Completions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messages:
+                  type: array
+                  items:
+                    type: object
+                temperature:
+                  type: number
+      responses:
+        '200':
+          description: Chat completion
+          content:
+            application/json:
+              schema:
+                type: object
   /deployments/{deployment-id}/chat/completions:
     post:
       summary: Create a chat completion
@@ -61,6 +88,26 @@ paths:
       - apiKey: []
       - entra: []
 components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Impersonate user
+    entra:
+      type: oauth2
+      description: Microsoft Entra ID OAuth 2.0 bearer token
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://cognitiveservices.azure.com/.default: Azure Cognitive Services data plane
   schemas:
     ChatMessage:
       type: object
@@ -85,37 +132,6 @@ components:
           type: string
         tool_call_id:
           type: string
-    ChatCompletionResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        object:
-          type: string
-        created:
-          type: integer
-        model:
-          type: string
-        choices:
-          type: array
-          items:
-            type: object
-            properties:
-              index:
-                type: integer
-              message:
-                $ref: '#/components/schemas/ChatMessage'
-              finish_reason:
-                type: string
-        usage:
-          type: object
-          properties:
-            prompt_tokens:
-              type: integer
-            completion_tokens:
-              type: integer
-            total_tokens:
-              type: integer
     ChatCompletionRequest:
       type: object
       required:
@@ -161,17 +177,39 @@ components:
           type:
           - string
           - object
-  securitySchemes:
-    apiKey:
-      type: apiKey
-      in: header
-      name: api-key
-      description: Azure OpenAI resource API key
-    entra:
-      type: oauth2
-      description: Microsoft Entra ID OAuth 2.0 bearer token
-      flows:
-        clientCredentials:
-          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
-          scopes:
-            https://cognitiveservices.azure.com/.default: Azure Cognitive Services data plane
+    ChatCompletionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+        created:
+          type: integer
+        model:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              index:
+                type: integer
+              message:
+                $ref: '#/components/schemas/ChatMessage'
+              finish_reason:
+                type: string
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+externalDocs:
+  description: Azure OpenAI REST API Documentation
+  url: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+x-generated-from: https://learn.microsoft.com/en-us/azure/ai-services/openai/
+x-generated-by: claude-crawl-2026-05-08
