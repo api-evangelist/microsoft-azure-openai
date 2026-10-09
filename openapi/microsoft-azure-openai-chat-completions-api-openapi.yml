@@ -60,6 +60,44 @@ paths:
       security:
       - apiKey: []
       - entra: []
+  /openai/deployments/{deployment-id}/chat/completions:
+    parameters:
+    - name: deployment-id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+    post:
+      operationId: createChatCompletion
+      summary: AOAI Create chat completion
+      description: Creates a chat completion for a list of messages.
+      tags:
+      - Chat Completions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messages:
+                  type: array
+                  items:
+                    type: object
+                temperature:
+                  type: number
+      responses:
+        '200':
+          description: Chat completion
+          content:
+            application/json:
+              schema:
+                type: object
 components:
   schemas:
     ChatMessage:
@@ -175,3 +213,10 @@ components:
           tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
           scopes:
             https://cognitiveservices.azure.com/.default: Azure Cognitive Services data plane
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: Impersonate user
