@@ -1,0 +1,106 @@
+edges:
+- partner_name: OpenRouter
+  partner: openrouter
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://openrouter.ai/api/v1/models
+  coverage_role:
+  - inference-host
+  router_signals:
+    inference-host:
+      models: 56
+      router_ids:
+      - Azure
+      tools_share: 0.98
+      structured_output_share: 1.0
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: LiteLLM
+  partner: litellm
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json
+  coverage_role:
+  - provider
+  router_signals:
+    provider:
+      models: 313
+      router_ids:
+      - azure
+      - azure_text
+      tools_share: 0.78
+      structured_output_share: 0.63
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: LLM Gateway
+  partner: llmgateway-io
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://api.llmgateway.io/v1/models
+  coverage_role:
+  - provider
+  router_signals:
+    provider:
+      models: 39
+      router_ids:
+      - azure
+      tools_share: 0.82
+      structured_output_share: 0.87
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: Portkey
+  partner: portkey
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/Portkey-AI/gateway/tree/main/src/providers/azure-openai
+  coverage_role:
+  - provider
+  router_signals:
+    provider:
+      models: null
+      router_ids:
+      - azure-openai
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+- partner_name: Cloudflare AI Gateway
+  partner: cloudflare-ai-gateway
+  partner_match: router
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/cloudflare/cloudflare-docs/blob/production/src/content/docs/ai-gateway/usage/providers/azureopenai.mdx
+  coverage_role:
+  - provider
+  router_signals:
+    provider:
+      models: null
+      router_ids:
+      - azureopenai
+  matched_by: verified-token-table
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked:
+- https://api.llmgateway.io/v1/models
+- https://developers.cloudflare.com/ai-gateway/usage/providers/
+- https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json
+- https://github.com/Portkey-AI/gateway/tree/main/src/providers
+- https://openrouter.ai/api/v1/models
