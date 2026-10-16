@@ -58,17 +58,6 @@
   relationship: system-coverage
   status: not-a-workflow
   arazzo: null
-- slug: microsoft-azure-openai-livekit-agents
-  label: LiveKit Agents
-  partner: livekit
-  partner_name: LiveKit Agents
-  type: coverage
-  channel: partner-built
-  evidence: https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-azure
-  source: edge
-  relationship: system-coverage
-  status: not-a-workflow
-  arazzo: null
 - slug: microsoft-azure-openai-llamaindex
   label: LlamaIndex
   partner: llamaindex
@@ -76,6 +65,17 @@
   type: coverage
   channel: partner-built
   evidence: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/embeddings/llama-index-embeddings-azure-openai
+  source: edge
+  relationship: system-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: microsoft-azure-openai-livekit-agents
+  label: LiveKit Agents
+  partner: livekit
+  partner_name: LiveKit Agents
+  type: coverage
+  channel: partner-built
+  evidence: https://github.com/livekit/agents/tree/main/livekit-plugins/livekit-plugins-azure
   source: edge
   relationship: system-coverage
   status: not-a-workflow
