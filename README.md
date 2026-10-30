@@ -1,4 +1,4 @@
-# Azure OpenAI Service (microsoft-azure-openai)
+# Azure OpenAI Service
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,143 @@
 
 Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo, DALL-E, and Whisper with enterprise-grade security, compliance, and regional availability.
 
-## Tags
+**Areas:** Artificial Intelligence · Embeddings · GPT · Generative AI · LLM · OpenAI
 
-- AI
-- Embeddings
-- GPT
-- Generative AI
-- Large Language Models
-- OpenAI
+## Azure OpenAI Service on APIs.io
 
-## Timestamps
+Everything profiled for Azure OpenAI Service is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-azure-openai/](https://apis.io/providers/microsoft-azure-openai/)** — or go straight to one of the APIs or properties below.
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+### APIs (8)
 
-## APIs
+- [Azure OpenAI Service Completions API](https://apis.io/apis/microsoft-azure-openai/microsoft-azure-openai-completions-api/) — The Completions API from Azure OpenAI Service — 1 operation(s) for completions.
+- [Azure OpenAI Service Embeddings API](https://apis.io/apis/microsoft-azure-openai/microsoft-azure-openai-embeddings-api/) — The Embeddings API from Azure OpenAI Service — 1 operation(s) for embeddings.
+- [Azure OpenAI Service Images API](https://apis.io/apis/microsoft-azure-openai/microsoft-azure-openai-images-api/) — The Images API from Azure OpenAI Service — 1 operation(s) for images.
+- [Azure OpenAI Inference REST API](https://apis.io/apis/microsoft-azure-openai/inference-api/) — Data-plane REST API for running inference against deployed Azure OpenAI models, including chat completions, completions, embeddings, image generation, and…
+- [Azure OpenAI Responses API](https://apis.io/apis/microsoft-azure-openai/responses-api/) — Stateful, agent-friendly API for building multi-turn AI experiences with tool use, file inputs, and conversation state managed on the service side.
+- [Azure OpenAI Control Plane API](https://apis.io/apis/microsoft-azure-openai/control-plane/) — Azure Resource Manager (ARM) REST API for creating and managing Azure OpenAI accounts, model deployments, network rules, and other resource configuration.
+- [Azure OpenAI Service Audio API](https://apis.io/apis/microsoft-azure-openai/microsoft-azure-openai-audio-api/) — Audio transcription and translation (Whisper)
+- [Azure OpenAI Service Chat Completions API](https://apis.io/apis/microsoft-azure-openai/microsoft-azure-openai-chat-completions-api/) — Chat-formatted text generation
 
-### Azure OpenAI Service API
+### Published properties
 
-Azure OpenAI Service provides REST API access to OpenAI large language models including GPT-4, GPT-4o, GPT-3.5 Turbo, DALL-E, and Whisper with enterprise-grade security and compliance. It supports chat completions, text generation, embeddings, image generation, audio transcription, and fine-tuning with Azure Active Directory authentication and private networking.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Human URL:** [https://learn.microsoft.com/en-us/azure/ai-services/openai/](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- **Base URL:** `https://{resource}.openai.azure.com/`
+#### GraphQL (1)
 
-#### Tags
+GraphQL schemas.
 
-- AI
-- Embeddings
-- GPT
-- Generative AI
-- Large Language Models
-- OpenAI
+- [Azure OpenAI Service GraphQL API](https://apis.io/graphqls/microsoft-azure-openai/azure-openai-graphql/)
 
-#### Properties
+#### Agentic access (1)
 
-- [OpenAPI](openapi/microsoft-azure-openai-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-azure-openai.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-azure-openai.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Authentication](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/managed-identity)
-- [Quickstart](https://learn.microsoft.com/en-us/azure/ai-services/openai/quickstart)
-- [API Reference](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-## Common Properties
+- [Microsoft Azure Openai Agentic Access](https://apis.io/agentic-access/microsoft-azure-openai/microsoft-azure-openai-agentic-access/)
 
-- [GitHub Organization](https://github.com/Azure)
-- [Portal](https://portal.azure.com/)
-- [Pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/)
-- [Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Azure OpenAI Service REST API](https://apis.io/collections/microsoft-azure-openai/open-microsoft-azure-openai/)
+- [Azure OpenAI Service REST Chat API](https://apis.io/collections/microsoft-azure-openai/open-microsoft-azure-openai-chat-api/)
+- [Azure OpenAI Service REST Chat Completions API](https://apis.io/collections/microsoft-azure-openai/open-microsoft-azure-openai-completions-api/)
+- [Azure OpenAI Service REST Chat Embeddings API](https://apis.io/collections/microsoft-azure-openai/open-microsoft-azure-openai-embeddings-api/)
+- [Azure OpenAI Service REST Chat Images API](https://apis.io/collections/microsoft-azure-openai/open-microsoft-azure-openai-images-api/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Microsoft Azure Openai Authentication](https://apis.io/security/microsoft-azure-openai/microsoft-azure-openai-authentication/)
+- [Microsoft Azure Openai Domain Security](https://apis.io/security/microsoft-azure-openai/microsoft-azure-openai-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Microsoft Azure Openai Scopes](https://apis.io/scopes/microsoft-azure-openai/microsoft-azure-openai-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Microsoft Azure Openai Plans Pricing](https://apis.io/plans/microsoft-azure-openai/microsoft-azure-openai-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Microsoft Azure Openai Rate Limits](https://apis.io/rate-limits/microsoft-azure-openai/microsoft-azure-openai-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Microsoft Azure Openai Finops](https://apis.io/finops/microsoft-azure-openai/microsoft-azure-openai-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
-- [Sign Up](https://azure.microsoft.com/en-us/free/)
-- [Login](https://portal.azure.com/)
+- [Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/)
 - [Support](https://support.microsoft.com/)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
-- [L L Ms Txt](https://portal.azure.com/llms.txt)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/Azure)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 43.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 80.4 |
+| Contract quality | 51.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 54.8 |
+| Access clarity | 44.7 |
+
+**Agent readiness 23.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 27.3** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-azure-openai/](https://apis.io/providers/microsoft-azure-openai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Azure OpenAI Service: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-azure-openai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
